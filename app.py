@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, jsonify
 from config import Config
 from models import db
 from flask_login import LoginManager
@@ -23,6 +23,13 @@ app.register_blueprint(auth_blueprint)
 app.register_blueprint(profiles_blueprint)
 app.register_blueprint(jobs_blueprint)
 app.register_blueprint(curriculum_blueprint)
+
+
+
+# Add a simple route for the homepage
+@app.route('/')
+def home():
+    return jsonify({"message": "Welcome to the SkillUP Application API!"})
 
 
 # Create the database tables if they don't exist yet
