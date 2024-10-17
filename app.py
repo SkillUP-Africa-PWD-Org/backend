@@ -5,6 +5,7 @@ from flask_login import LoginManager
 from routes.auth import auth_blueprint
 from routes.profiles import profiles_blueprint
 from routes.jobs import jobs_blueprint
+from routes.curriculum import curriculum_blueprint
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -21,6 +22,7 @@ login_manager.login_view = 'auth.login'
 app.register_blueprint(auth_blueprint)
 app.register_blueprint(profiles_blueprint)
 app.register_blueprint(jobs_blueprint)
+app.register_blueprint(curriculum_blueprint)
 
 
 # Create the database tables if they don't exist yet

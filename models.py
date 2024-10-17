@@ -17,3 +17,9 @@ class Job(db.Model):
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text, nullable=False)
     is_available = db.Column(db.Boolean, default=True)
+
+class Curriculum(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    course_title = db.Column(db.String(100), nullable=False)
+    course_description = db.Column(db.Text, nullable=False)
+    syllabus_url = db.Column(db.String(500), nullable=True)
