@@ -22,12 +22,11 @@ class Curriculum(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     course_title = db.Column(db.String(100), nullable=False)
     course_description = db.Column(db.Text, nullable=False)
-    # A course can have multiple lessons
 
 class Lesson(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     lesson = db.Column(db.String(200), nullable=False)  # Lesson title
-    content = db.Column(db.Text, nullable=False)  # Lesson content
+    content = db.Column(db.Text, nullable=False)  # Lesson content (assumed blob name)
     images = db.Column(db.String(500), nullable=True)  # Optional images URL or description
     curriculum_id = db.Column(db.Integer, db.ForeignKey('curriculum.id'), nullable=False)  # Foreign key to Curriculum
 
