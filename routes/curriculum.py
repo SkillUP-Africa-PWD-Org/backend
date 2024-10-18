@@ -69,9 +69,9 @@ def fetch_course_by_title(title):
             blob_name = lesson.content  # Assuming 'content' stores the blob name
             lesson_content = getContent(blob_name)
             lesson_list.append({
+                "id": lesson.id,
                 "lesson_title": lesson.lesson,
-                "lesson_content": lesson_content,
-                "id": lesson.id
+                "lesson_content": lesson_content
             })
 
         return jsonify(lesson_list), 200
