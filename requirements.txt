@@ -8,3 +8,4 @@ pyodbc==4.0.32
 python-dotenv
 PyPDF2
 flasgger
+flask-swagger-ui
