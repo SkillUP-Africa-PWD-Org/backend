@@ -16,9 +16,20 @@ with app.app_context():
     curriculum_tailoring = Curriculum(course_title="Tailoring", course_description="Create, Customize and master tailoring.")
     lesson_tailoring_1 = Lesson(lesson="Tailoring 101", content="Tailoring course 1.pdf", images=None, curriculum=curriculum_tailoring)
 
+    # Curriculum 3: Mechanics
+    curriculum_mechanics = Curriculum(course_title="Mechanics", course_description="Accessible mechanical repair training.")
+    lesson_mechanics_1 = Lesson(lesson="Mechanics 101", content="Mechanics course 1.pdf", images=None, curriculum=curriculum_tailoring)
+
+    # Curriculum 4: Jewelry
+    curriculum_jewelry = Curriculum(course_title="Jewelry", course_description="Create, Customize and master Jewely.")
+    lesson_jewelry_1 = Lesson(lesson="Jewelry 101", content="Jewelery course 1.pdf", images=None, curriculum=curriculum_tailoring)
+
+    
     # Add all to session and commit
     db.session.add_all([curriculum_plumbing, lesson_plumbing_1,
-                        curriculum_tailoring, lesson_tailoring_1])
+                        curriculum_tailoring, lesson_tailoring_1,
+                        curriculum_mechanics, lesson_mechanics_1,
+                        curriculum_jewelry, lesson_jewelry_1])
     
     db.session.commit()
 
