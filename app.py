@@ -1,3 +1,4 @@
+from flasgger import Swagger
 from flask import Flask, render_template, url_for, jsonify
 from config import Config
 from models import db
@@ -8,6 +9,7 @@ from routes.jobs import jobs_blueprint
 from routes.curriculum import curriculum_blueprint
 
 app = Flask(__name__)
+swagger = Swagger(app)
 app.config.from_object(Config)
 
 # Initialize the database

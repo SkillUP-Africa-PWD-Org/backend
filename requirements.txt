@@ -7,3 +7,4 @@ azure-storage-blob==12.8.1
 pyodbc==4.0.32
 python-dotenv
 PyPDF2
+flasgger
