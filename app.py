@@ -32,15 +32,12 @@ app.register_blueprint(curriculum_blueprint)
 # Define the user_loader function
 @login_manager.user_loader
 def load_user(user_id):
-    # Assuming your User model has a method 'get' or 'query.get' to find the user by ID
     return User.query.get(int(user_id))  # Load the user from the database by their ID
 
 # Add a simple route for the homepage
 @app.route('/')
 def home():
     return jsonify({"message": "Welcome to the SkillUP Application API!"})
-
-# No need to define a /swagger route manually
 
 # Create the database tables if they don't exist yet
 with app.app_context():
